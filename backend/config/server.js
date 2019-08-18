@@ -7,7 +7,6 @@
 
 var express = require('express');
 var consign = require('consign');
-var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
 var app = express();
@@ -23,14 +22,14 @@ app.use(express.static('./app/public'))
 app.use(express.urlencoded());
 
 /*Setando o express-validator como midleware de validação*/
-app.use(expressValidator());
+//app.use(expressValidator());
 
 /*CONSIGN = importacao automatica dos arquivos. Evita de ficar dando um monte de require*/
 consign()
-	.include('app/routes')
-	.then('config/dbConnection.js')
-	.then('app/models')
-	.then('app/controllers')
+	.include('routes')
+	.then('../config/dbConnection.js')
+	.then('models')
+	.then('controllers')
 	.into(app);
 
 
