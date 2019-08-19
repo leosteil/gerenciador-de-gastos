@@ -26,12 +26,11 @@ app.use(express.urlencoded());
 
 /*CONSIGN = importacao automatica dos arquivos. Evita de ficar dando um monte de require*/
 consign()
-	.include('routes')
-	.then('../config/dbConnection.js')
-	.then('models')
-	.then('controllers')
+	.include('src/routes')
+	.then('./config/dbConnection.js')
+	.then('src/models')
+	.then('src/controllers')
 	.into(app);
-
 
 module.exports = app;
 
