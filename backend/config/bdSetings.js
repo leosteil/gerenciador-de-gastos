@@ -1,6 +1,6 @@
 const settings = {
     "host": "leonardo",
     "user": "leonardo",
-    "password" : "leonardddo",
+    "password" : "leonarddfdddo",
     "database" : "leonardo"
 }
