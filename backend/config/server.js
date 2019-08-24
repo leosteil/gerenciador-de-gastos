@@ -24,6 +24,15 @@ app.use(express.urlencoded());
 /*Setando o express-validator como midleware de validação*/
 //app.use(expressValidator());
 
+app.use(function(req, res, next){
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+	res.setHeader("Access-Control-Allow-Headers", "content-type");
+	res.setHeader("Content-Type", "application/json");
+	res.setHeader("Access-Control-Allow-Credentials", true);
+	next();
+});
+
 /*CONSIGN = importacao automatica dos arquivos. Evita de ficar dando um monte de require*/
 consign()
 	.include('src/routes')

@@ -1,12 +1,14 @@
+//import {settings} from "./config/bdSetings.js";
 var mysql = require('mysql');
+//const settings = require("bdSetings.js");
 
 var connMySQL = function(){
 	
 	return mysql.createConnection({
-		host : '',
-		user : '',
+		host : 'localhost',
+		user : 'root',
 		password : '',
-		database : ''
+		database : 'gerenciador-de-gastos'
 	});
 
 }

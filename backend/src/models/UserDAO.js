@@ -8,7 +8,7 @@ function UserDAO(connection){
 
 UserDAO.prototype.getUsers = function(callback){
 
-	this._connection.query("SELECT * FROM noticias ORDER BY data_criacao DESC", callback);
+	this._connection.query("SELECT * FROM user", callback);
 
 }
 
